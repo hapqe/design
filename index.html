@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="./assets/favicon.8d99ceea.ico">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+
+  <title>Sustained Fashion</title>
+  <meta name="description" content="A Game About Sustained Fashion">
+
+  <meta property="twitter:image" content="" />
+  <meta property="og:image" content="" />
+
+  <meta name="robots" content="index,follow">
+  <meta name="url" content="http://needle.tools">
+
+  
+  
+  <script type="module" crossorigin src="./assets/index.b0ca113d.js"></script>
+  <link rel="stylesheet" href="./assets/index.58ccd2c5.css">
+</head>
+
+<body>
+  <script>
+    // hack for simple-peer
+    window.global = window;
+    var parcelRequire;
+  </script>
+  
+  
+  <script>
+    function setTool(e) {
+      e.preventDefault();
+      window.dispatchEvent(new CustomEvent('setTool', { detail: e }));
+    }
+    function resetCloth(e) {
+      e.preventDefault();
+      window.dispatchEvent(new CustomEvent('resetCloth', { detail: e }));
+    }
+    function submitCloth(e) {
+      e.preventDefault();
+      window.dispatchEvent(new CustomEvent('submitCloth', { detail: e }));
+    }
+  </script>
+
+  <needle-engine></needle-engine>
+
+  <div class="fill">
+    <div class="circle" onpointerdown="setTool(event)">
+      <img id="tool" src="./assets/Camera.5b1aab87.svg" alt="">
+    </div>
+    <div class="circle" onpointerdown="resetCloth(event)">
+      <img src="./assets/Reset.44177f78.svg" alt="">
+    </div>
+  </div>
+  <div class="fill" style="right: 0; left: unset;">
+    <div class="circle" onpointerdown="submitCloth(event)">
+      <img src="./assets/Done.9943eb9e.svg" alt="">
+    </div>
+    <canvas id="clothColor" hidden color="white" width="200" height="200"></canvas>
+  </div>
+  <div id="dim" class="fill contain" style="opacity: 0; background-color: black; padding: 0; transition: 300ms;">
+
+  </div>
+  <div id="wrapper" class="fill" style="height: calc(100vh - 4em); width: 100%; padding: 0; overflow: visible;">
+
+  </div>
+</body>
+</html>
